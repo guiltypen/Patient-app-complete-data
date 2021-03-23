@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import doctorStore from "../store/doctorStore";
+import { DoctorForm } from "../components/styles";
+
 const DoctorModal = (props) => {
   const oldDoctor = props.oldDoctor;
   const [doctor, setDoctor] = useState(
@@ -26,8 +28,8 @@ const DoctorModal = (props) => {
       onRequestClose={props.closeModal}
       contentLabel="Example Modal"
     >
-      <h3>New Doctor</h3>
-      <form>
+      <h3>{oldDoctor ? "Update Doctor" : "Create Doctor"}</h3>
+      <DoctorForm>
         <div className="form-group row">
           <div className="col-6">
             <label>Doctor Name</label>
@@ -51,8 +53,10 @@ const DoctorModal = (props) => {
           </div>
         </div>
 
-        <button onClick={handleSubmit}>Update</button>
-      </form>
+        <button onClick={handleSubmit}>
+          {oldDoctor ? "Update Doctor" : "Create Doctor"}
+        </button>
+      </DoctorForm>
     </Modal>
   );
 };

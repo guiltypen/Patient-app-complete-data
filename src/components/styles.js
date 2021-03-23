@@ -6,7 +6,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Title = styled.h3``;
+export const Title = styled.h3`
+  color: white;
+  text-align: center;
+`;
 export const ListWrapper = styled.div`
   background-color: #272c34;
   padding: 20px;
@@ -15,8 +18,9 @@ export const ListWrapper = styled.div`
   padding: 20px;
   width: 200px;
   height: 300px;
-  overflow: scroll;
-  scrollbar-color: #4285f4 #f5f5f5;
+  overflow: auto;
+  scrollbar-color: dark;
+  text-align: center;
 `;
 export const UpdateButton = styled.div`
   margin: 10px;
@@ -28,7 +32,13 @@ export const PatientListWrapper = styled.div``;
 
 export const PatientWrapper = styled.div``;
 
-export const SearchBarStyled = styled.input``;
+export const SearchBarStyled = styled.input`
+  padding: 5px;
+  border-radius: 8px;
+  margin: 10px;
+
+  margin-left: 20px;
+`;
 
 export const DetailWrapper = styled.div`
   margin: 20px;
@@ -36,6 +46,9 @@ export const DetailWrapper = styled.div`
   background-color: #272c34;
   padding: 30px;
   border-radius: 8px;
+  height: 370px;
+  margin-top: 10px;
+  width: 400px;
   p {
     color: white;
     font-size: 14px;
@@ -43,10 +56,25 @@ export const DetailWrapper = styled.div`
 `;
 export const ListDetailWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 export const DetailWrapperName = styled.h2`
   color: white;
 `;
 export const ButtonWrapper = styled.div`
   justify-content: center;
+`;
+
+export const PatientForm = styled.form`
+  justify-content: center;
+`;
+
+export const DoctorForm = styled.form`
+  justify-content: center;
+  border-radius: 30px;
+`;
+
+export const Dropdowndiv = styled.div`
+  padding: 10px;
+  margin-left
 `;

@@ -13,7 +13,6 @@ import DeleteButton from "./buttons/deletebutton";
 import patientStore from "../store/patientStore";
 
 import UpdateButton from "./buttons/updateButton";
-
 import { observer } from "mobx-react";
 
 const PatientDetail = () => {

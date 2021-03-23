@@ -25,13 +25,9 @@ const PatientList = (props) => {
     <Patient patient={patient} key={patient.id} setPatient={props.setPatient} />
   ));
 
-  const doctorList = doctorStore.Doctors.map(
-    (doctor) => console.log(doctor.DoctorName)
-    // <Doctor docotor={doctor} key={doctor.id} setPatient={props.setPatient} />
-  );
   return (
     <PatientListWrapper>
-      <SearchBar setQuery={setQuery} />
+      <SearchBar title="search for patient name" setQuery={setQuery} />
       <ListWrapper>{patientList}</ListWrapper>
       <AddPatient />
     </PatientListWrapper>

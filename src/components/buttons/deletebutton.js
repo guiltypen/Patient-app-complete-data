@@ -2,11 +2,14 @@ import React from "react";
 import { DeleteButtonStyled } from "../styles";
 import { Button } from "@material-ui/core";
 import patientStore from "../../store/patientStore";
+import doctorStore from "../../store/doctorStore";
 
 const DeleteButton = (props) => {
   const handleDelete = (event) => {
     event.preventDefault();
-    patientStore.deletePatient(props.patientId);
+    props.patientId
+      ? patientStore.deletePatient(props.patientId)
+      : doctorStore.deleteDoctor(props.doctorId);
   };
 
   return (

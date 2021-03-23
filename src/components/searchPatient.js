@@ -6,7 +6,7 @@ import { SearchBarStyled } from "../components/styles";
 const SearchBar = (props) => {
   return (
     <SearchBarStyled
-      placeholder="Search for a patient name"
+      placeholder={props.title}
       onChange={(event) => props.setQuery(event.target.value)}
     />
   );

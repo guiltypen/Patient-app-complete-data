@@ -25,7 +25,7 @@ const DoctorList = (props) => {
   ));
   return (
     <PatientListWrapper>
-      <SearchBar setQuery={setQuery} />
+      <SearchBar title="search for doctor name" setQuery={setQuery} />
       <ListWrapper>{doctorList}</ListWrapper>
       <AddDoctor />
     </PatientListWrapper>

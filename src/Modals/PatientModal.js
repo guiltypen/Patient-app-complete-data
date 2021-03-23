@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+//Modal
 import Modal from "react-modal";
+//Patient store
 import patientStore from "../store/patientStore";
+// styles
+import { PatientForm } from "../components/styles";
 const PatientModal = (props) => {
   const oldPatient = props.oldPatient;
   const [patient, setPatient] = useState(
@@ -29,8 +33,8 @@ const PatientModal = (props) => {
       onRequestClose={props.closeModal}
       contentLabel="Example Modal"
     >
-      <h3>New Patient</h3>
-      <form>
+      <h3>{oldPatient ? "Update Patient" : "Create Patient"}</h3>
+      <PatientForm>
         <div className="form-group row">
           <div className="col-6">
             <label>patientName</label>
@@ -63,28 +67,11 @@ const PatientModal = (props) => {
             name="case"
           />
         </div>
-        <div className="form-group">
-          <label> HospitalName</label>
-          {/* <input
-            type="text"
-            value={patient.name}
-            className="form-control"
-            onChange={handleChange}
-            name="HospitalName"
-          /> */}
-        </div>
-        <div className="form-group">
-          <label> DoctorName</label>
-          {/* <input
-            type="text"
-            value={patient.DoctorName}
-            className="form-control"
-            onChange={handleChange}
-            name="DoctorName"
-          /> */}
-        </div>
-        <button onClick={handleSubmit}>Update</button>
-      </form>
+
+        <button onClick={handleSubmit}>
+          {oldPatient ? "Update Patient" : "Create Patient"}
+        </button>
+      </PatientForm>
     </Modal>
   );
 };

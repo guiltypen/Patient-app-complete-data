@@ -25,8 +25,9 @@ class DoctorStore {
   };
   deleteDoctor = async (doctorId) => {
     try {
-      await axios.delete(`http://localhost:8000/docotrs/${doctorId}`);
+      await axios.delete(`http://localhost:8000/doctors/${doctorId}`);
       this.Doctors = this.Doctors.filter((doctor) => doctor.id !== +doctorId);
+      // this.loading = false;
     } catch (error) {
       console.error("DoctorStore -> deleteDoctor -> error", error);
     }
@@ -49,6 +50,7 @@ class DoctorStore {
     try {
       const response = await axios.get("http://localhost:8000/doctors");
       this.Doctors = response.data;
+
       console.log(response.data);
     } catch (error) {
       console.error("DoctorStore -> fetchDoctor -> error", error);
