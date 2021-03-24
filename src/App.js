@@ -9,40 +9,46 @@ import Homepage from "./components/homepage";
 import PatientList from "./components/PatientList";
 import DoctorList from "./components/DoctorList";
 //styles
-import { GlobalStyle, ListDetailWrapper } from "./components/styles";
+import {
+  GlobalStyle,
+  ListDetailWrapper,
+  SearchBarStyled,
+} from "./components/styles";
 import PatientDetail from "./components/patientDetail";
 import DoctorDetail from "./components/doctorDetail .js";
 import patientStore from "./store/patientStore";
 import Dropdown from "./components/Dropdown";
-
+import SearchBar from "./components/searchPatient";
 function App() {
   const [selected_Item, setSelected] = useState(null);
   console.log(selected_Item);
   return (
-    <div>
+    <div
+      style={{
+        position: "absolute",
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
       <GlobalStyle />
       <Switch>
         <Route path="/" exact>
-          <Dropdown />
+          <SearchBar />
           <Homepage />
         </Route>
         <Route path="/patients" exact>
-          <Dropdown />
           <PatientList />
         </Route>
         <Route path="/patients/:patientSlug">
-          <Dropdown />
           <ListDetailWrapper>
             <PatientList setSelected={setSelected} />
             <PatientDetail />
           </ListDetailWrapper>
         </Route>
         <Route path="/doctors" exact>
-          <Dropdown />
           <DoctorList />
         </Route>
         <Route path="/doctors/:doctorSlug">
-          <Dropdown />
           <ListDetailWrapper>
             <DoctorList setSelected={setSelected} />
             <DoctorDetail />

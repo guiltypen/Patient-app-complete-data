@@ -3,12 +3,17 @@ export const GlobalStyle = createGlobalStyle`
   body {
     color: #242424;
     background-color: #1e1e1e;
+
   }
 `;
 
 export const Title = styled.h3`
   color: white;
-  text-align: center;
+  padding: 20px;
+`;
+export const HomeText = styled.h6`
+  color: white;
+  padding: 20px;
 `;
 export const ListWrapper = styled.div`
   background-color: #272c34;
@@ -33,21 +38,21 @@ export const PatientListWrapper = styled.div``;
 export const PatientWrapper = styled.div``;
 
 export const SearchBarStyled = styled.input`
-  padding: 5px;
-  border-radius: 8px;
-  margin: 10px;
-
-  margin-left: 20px;
+  padding-left: 5px;
+  border-radius: 0px;
+  width: 140px;
+  height: 30px;
+  margin-left: 5px;
+  font-size: 10px;
+  margin-left: -10px;
 `;
 
 export const DetailWrapper = styled.div`
-  margin: 20px;
-  position: static;
   background-color: #272c34;
   padding: 30px;
   border-radius: 8px;
   height: 370px;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 400px;
   p {
     color: white;
@@ -62,7 +67,10 @@ export const DetailWrapperName = styled.h2`
   color: white;
 `;
 export const ButtonWrapper = styled.div`
-  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
 `;
 
 export const PatientForm = styled.form`
@@ -75,6 +83,10 @@ export const DoctorForm = styled.form`
 `;
 
 export const Dropdowndiv = styled.div`
-  padding: 10px;
-  margin-left
+  padding-right: 5px;
+  width: 55px;
+  margin-left: -2px;
+  a {
+    font-size: 10px;
+  }
 `;

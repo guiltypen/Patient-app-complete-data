@@ -8,9 +8,9 @@ const AddDoctor = () => {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
   return (
-    <div>
+    <div style={{ position: "fixed", marginTop: "-55px", marginLeft: "20px" }}>
       <Button
-        style={{ marginLeft: "35px" }}
+        style={{ width: "200px" }}
         onClick={openModal}
         variant="contained"
       >
